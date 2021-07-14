@@ -11,7 +11,14 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
     <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}
-    
+    select.datos{
+      padding: 7px 0px 7px 0px;
+      font-size: 1.2em;
+      padding-left: 13px;
+      color: #757575;
+      font-family: inherit;
+      max-width: 33.3em;
+    }
     body {
         background-color: #ffffff;
     }
@@ -35,6 +42,7 @@
         padding: 0 30px 0 30px;
         color: #fff;
         font-size: 1.2em;
+        margin-top: 25px;
     }
 
     .container{
@@ -54,6 +62,7 @@
     hr{
         border: 1px solid #868686;
     }
+
 
     </style>
   </head>
@@ -145,11 +154,15 @@
             <div id="titulo"> 
                 <h3>Crea tu cuenta</h3><hr>
             </div>
-            <form action="/action_page.php">
+            <form method="POST"  action="<?php echo $_SERVER['PHP_SELF'];?>">
                 <input type="text" class="datos" name="email" placeholder="    EMAIL"><br>
                 <input type="password" class="datos" name="pass" placeholder="    CONTRASEÑA"><br>
-                <input type="password" class="datos" name="pass" placeholder="    CONFIRMAR CONTRASEÑA"><br>
+                <input type="password" class="datos" name="passconf" placeholder="    CONFIRMAR CONTRASEÑA"><br>
                 <input type="text" class="datos" name="user" placeholder="    USUARIO"><br>
+                <select name="sexo" class="datos" >
+                  <option value="1">Hombre</option> 
+                  <option value="2">Mujer</option> 
+               </select>
                 <input type="submit" id="button" value="Registrarse">
             </form>
 
@@ -204,5 +217,19 @@
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
     <!--coded by Drel-->
+
+
+
+    <?php
+      if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // collect value of input field
+        $name = $_POST['user'];
+        if (empty($name)) {
+          echo "Name is empty";
+        } else {
+          echo $name;
+        }
+      }
+      ?>
   </body>
 </html>
