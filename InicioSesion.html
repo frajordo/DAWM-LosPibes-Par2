@@ -21,7 +21,7 @@
         width: 100%;
         max-width: 40em;
     }
-    form{
+    #formulario{
         width: 100%;
         display: flex;
         align-items: center;
@@ -36,7 +36,10 @@
         color: #fff;
         font-size: 1.2em;
     }
-
+    #button:hover{
+      cursor: pointer;
+    }
+    
     .container{
         margin-bottom: 30px;
     }
@@ -137,7 +140,7 @@
           </nav>
         </div>
       </header>
-      <!--About-->
+      <!--SECCION DE DATOS-->
       <section class="section section-sm position-relative">
         <div class="container" id="about">
           <div class="d-flex align-items-center flex-column">
@@ -145,11 +148,11 @@
             <div id="titulo"> 
                 <h3>Bienvenido</h3><hr>
             </div>
-            <form action="/action_page.php">
+            <div id="formulario">
                 <input type="text" class="datos" name="user" placeholder="    USUARIO"><br><br>
                 <input type="text" class="datos" name="pass" placeholder="    CONTRASEÑA"><br><br>
-                <input type="submit" id="button" value="Iniciar sesión">
-            </form>
+                <button id="button" onclick="ComprobarUsuario()">Iniciar sesión</button>
+                </div>
 
           </div>
         </div>
@@ -201,6 +204,34 @@
     <div class="snackbars" id="form-output-global"></div>
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
+
+    <script>
+      function ComprobarUsuario(){
+
+        fetch(" data/users.json")
+          .then(response => response.json())
+          .then(data => {
+            var usuariosRegistrados = data["users"];
+            var username = document.getElementsByClassName("datos")[0].value;
+            var password = document.getElementsByClassName("datos")[1].value
+
+            if (  username == usuariosRegistrados[0].userName){
+              //console.log("ha ingresado como administrador");
+              window.location.href= "administrador.html";
+            }
+            else if ( username == usuariosRegistrados[1].userName){
+              //console.log("ha ingresado como usuario, redirigir a /user['usermane']")
+              window.location.href= "principal.html";
+            } else{
+              alert("No se encuentre registrado ")
+            }
+
+          })
+          .catch(console.error);
+
+      }
+    </script>
+
     <!--coded by Drel-->
   </body>
 </html>
