@@ -1095,3 +1095,17 @@
 		}
 	});
 }());
+const mostrar = (elemento) => {
+    elemento.style.display = 'block';
+}
+const ocultar = (elemento) => {
+    elemento.style.display = 'none';
+}
+const mostrarOcultar = (id) => {
+    let div = document.getElementById(id);
+    if( window.getComputedStyle(div).display !== 'none' ){
+      ocultar(div);
+      return false;
+    }
+    mostrar(div);
+}
