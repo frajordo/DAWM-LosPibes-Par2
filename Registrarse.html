@@ -55,6 +55,18 @@
         border: 1px solid #868686;
     }
 
+    .selector-container{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      max-width: 40em;
+      max-height: 2.8em;
+    }
+
+    .label{
+      align-self: center;
+    }
+
     </style>
   </head>
   <body>
@@ -140,16 +152,35 @@
       <!--About-->
       <section class="section section-sm position-relative">
         <div class="container" id="about">
-          <div class="d-flex align-items-center flex-column">
+          <div class="d-flex align-items-center justify-content-center flex-column">
 
             <div id="titulo"> 
                 <h3>Crea tu cuenta</h3><hr>
             </div>
             <form action="/action_page.php">
                 <input type="text" class="datos" name="email" placeholder="    EMAIL"><br>
+                <input type="text" class="datos" name="user" placeholder="    USUARIO"><br>
+                <input type="text" class="datos" name="edad" placeholder="    EDAD"><br>
+                <div class="selector-container">
+                  <label for="gender" class="label" id="gender-label">Escoja un género</label> 
+                  <select name="gender" class="datos" id="gender">
+                    <option value="H">Hombre</option>
+                    <option value="M">Mujer</option>
+                    <option value="O">Otro</option>
+                  </select>
+                </div><br>
+                <div class="selector-container">
+                  <label for="gender" class="label" id="why-label">¿Para qué va a usar nuestro producto?</label> 
+                  <select name="gender" class="datos" id="razon">
+                    <option value="NF">Negocio Familiar</option>
+                    <option value="NP">Negocio pequeño</option>
+                    <option value="TC">Tienda clandestina</option>
+                    <option value="O">Otro</option>
+                  </select>
+                </div><br>
+                
                 <input type="password" class="datos" name="pass" placeholder="    CONTRASEÑA"><br>
                 <input type="password" class="datos" name="pass" placeholder="    CONFIRMAR CONTRASEÑA"><br>
-                <input type="text" class="datos" name="user" placeholder="    USUARIO"><br>
                 <input type="submit" id="button" value="Registrarse">
             </form>
 
@@ -203,6 +234,7 @@
     <div class="snackbars" id="form-output-global"></div>
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/login-register.js"></script>
     <!--coded by Drel-->
   </body>
 </html>
