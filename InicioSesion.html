@@ -208,23 +208,33 @@
     <script>
       function ComprobarUsuario(){
 
-        fetch(" data/users.json")
+        fetch(" data/clients.json")
           .then(response => response.json())
           .then(data => {
-            var usuariosRegistrados = data["users"];
-            var username = document.getElementsByClassName("datos")[0].value;
-            var password = document.getElementsByClassName("datos")[1].value
-
-            if (  username == usuariosRegistrados[0].userName){
-              //console.log("ha ingresado como administrador");
+            const usernameCheck = document.getElementsByClassName("datos")[0].value;
+            const passwordCheck = document.getElementsByClassName("datos")[1].value;
+            let checkAdminUser= "admin".localeCompare(usernameCheck)
+            let checkAdminPass= "admin".localeCompare(passwordCheck)
+            var flag=false
+            if (checkAdminPass==0 && checkAdminUser==0) {
               window.location.href= "administrador.html";
             }
-            else if ( username == usuariosRegistrados[1].userName){
-              //console.log("ha ingresado como usuario, redirigir a /user['usermane']")
-              window.location.href= "principal.html";
-            } else{
-              alert("No se encuentre registrado ")
+            for (let i = 0; i < data.length; i++) {
+              let client = data[i];
+              let username=client["user"]
+              let pass=client["password"]
+              let resUser=username.localeCompare(usernameCheck)
+              let resPass=pass.localeCompare(passwordCheck)
+              if (resUser==0 && resPass==0) {
+                window.location.href= "principal.html";
+                flag=true
+                break
+              }
             }
+            if (!flag){
+              alert("No se encuentra registrado")
+            }
+            
 
           })
           .catch(console.error);
