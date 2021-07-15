@@ -12,7 +12,8 @@
 .bg-gray h1,
 .bg-gray-primary-light h1,
 .bg-primary h1, .context-dark h2, .bg-gray-700 h2, .bg-gray-primary h2, .bg-gray h2, .bg-gray-primary-light h2, .bg-primary h2, .context-dark h3, .bg-gray-700 h3, .bg-gray-primary h3, .bg-gray h3, .bg-gray-primary-light h3, .bg-primary h3, .context-dark h4, .bg-gray-700 h4, .bg-gray-primary h4, .bg-gray h4, .bg-gray-primary-light h4, .bg-primary h4, .context-dark h5, .bg-gray-700 h5, .bg-gray-primary h5, .bg-gray h5, .bg-gray-primary-light h5, .bg-primary h5, .context-dark h6, .bg-gray-700 h6, .bg-gray-primary h6, .bg-gray h6, .bg-gray-primary-light h6, .bg-primary h6, .context-dark [class^='heading-'], .bg-gray-700 [class^='heading-'], .bg-gray-primary [class^='heading-'], .bg-gray [class^='heading-'], .bg-gray-primary-light [class^='heading-'], .bg-primary [class^='heading-'] {
-	color: #ffffff;
+	color: black;
+  box-shadow: none;
 }
 
 a:focus,
@@ -113,7 +114,7 @@ body {
 	line-height: 2.14286;
 	font-weight: 400;
 	color: rgb(0, 0, 0);
-	background-color: #CCCCCC;
+	background-color: white;
 	-webkit-text-size-adjust: none;
 	-webkit-font-smoothing: subpixel-antialiased;
 }
@@ -2006,7 +2007,7 @@ input:-webkit-autofill ~ .form-validation {
 }
 
 .form-wrap + * {
-	margin-top: 20px;
+	margin-top: 60px;
 }
 
 .form-input {
@@ -4260,7 +4261,7 @@ textarea.form-input {
 .page {
 	position: relative;
 	overflow: hidden;
-	min-height: 100vh;
+	min-height: 50vh;
 	opacity: 0;
 }
 
@@ -4468,9 +4469,9 @@ html.boxed body {
 	font-weight: 600;
 }
 
-.font-weight-bold {
+/*.font-weight-bold {
 	font-weight: 700;
-}
+}*/
 
 .font-weight-ubold {
 	font-weight: 900;
@@ -4924,7 +4925,7 @@ html [class*='section-'].section-bottom-0 {
 	section.section-lg:first-of-type,
 	section.section-xl:first-of-type,
 	section.section-xxl:first-of-type {
-		padding-top: 40px;
+		padding-top: 0px;
 	}
 }
 
@@ -4937,15 +4938,26 @@ html [class*='section-'].section-bottom-0 {
 	}
 	.section-md {
 		padding: 70px 0;
+    margin-left: 20px;
+    margin-right: 2px;
 	}
 	.section-lg {
 		padding: 85px 0;
 	}
 }
+@media (min-width: 280px){
+  .section-md{
+    padding: 70px 0;
+    margin-left:6%;
+    margin-right: 6%;
+  }
+}
 
 @media (min-width: 992px) {
 	.section-md {
-		padding: 80px 0 90px;
+		padding: 50px 0 90px;
+    margin-left: 100px;
+    margin-right: 100px;
 	}
 	.section-lg {
 		padding: 100px 0;
@@ -5066,14 +5078,14 @@ html [class*='section-'].section-bottom-0 {
 }
 
 .section-intro {
-	padding: 100px 0;
+	padding: 50px 0;
 	position: relative;
-	background-color: #505cfd;
+	background-color: white;
 }
 
 @media (min-width: 992px) {
 	.section-intro {
-		padding: 250px 0 145px 0;
+		padding: 200px 0px 0px 0px;
 	}
 }
 
@@ -5091,9 +5103,9 @@ html [class*='section-'].section-bottom-0 {
 	opacity: .1;
 }
 
-.section-intro h1 {
+/*.section-intro h1 {
 	text-shadow: 0px 2px 8px rgba(0, 0, 0, 0.35);
-}
+}*/
 
 .section-intro .intro-description {
 	font-size: 18px;
@@ -8802,4 +8814,98 @@ html.rd-navbar-fixed-linked .page {
 
 #compromisoImg{
 	margin-top: 1.75px;
+}
+section.section{
+  background-color: white;
+}
+div.container > div.row{
+  justify-content: start;
+}
+hr{
+  height: 1px;
+  width: 80%;
+  background-color: black;
+}
+form.rd-mailform{
+  width: 100%;
+}
+div.form-wrap{
+  border: #A56F6F 3px solid;
+  border-radius: 5px;
+}
+input.form-input#contact-email{
+  height: 150px;
+  top:0;
+}
+
+/*#princip{
+  width: 300px;
+  margin:auto;
+  margin-top: 50px;
+}
+
+#enlace{
+  float: left;
+  width: 75px;
+  height: 25px;
+  text-decoration: none;
+  border-radius: 5px 5px 0 0;
+  text-align: center;
+  letter-spacing: 0px;
+  -moz-transition: all 1s;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+}
+
+#enlace:hover{
+  letter-spacing: 3px;
+}
+#contenido{
+  clear: both;
+  margin: 0px;
+  overflow-x: hidden;
+  -moz-transition: all 1.5s;
+  -webkit-transition: all 1.5s;
+  -o-transition: all 1.5s;
+}
+
+.menu{
+  display: inline-block;
+  position: relative;
+}
+.Submenu{
+  display: none;
+  position: absolute;
+  top: 15px;
+  left: 0;
+  width: 100px;
+}*/
+
+#mi-super-contenido { 
+  display:none;
+  justify-content: center; 
+}
+#mi-super-contenido2 { 
+  display:none;
+  justify-content: center; 
+}
+ul{
+  text-align: left;
+  list-style-type: square;
+}
+#normal {
+  border-radius: 15px;
+  width: 70%;
+  height: 60%;
+  border: 3px solid #C4C4C4;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 90px;
+  background-color: #C4C4C4;
+}
+
+div#normal a{
+  font-size: 30px;
+  font-weight: bold;
 }
