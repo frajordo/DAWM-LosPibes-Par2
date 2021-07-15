@@ -21,7 +21,7 @@
         width: 100%;
         max-width: 40em;
     }
-    form{
+    #form{
         width: 100%;
         display: flex;
         align-items: center;
@@ -157,7 +157,7 @@
             <div id="titulo"> 
                 <h3>Crea tu cuenta</h3><hr>
             </div>
-            <form action="/action_page.php">
+            <div id="form">
                 <input type="text" class="datos" name="email" placeholder="    EMAIL"><br>
                 <input type="text" class="datos" name="user" placeholder="    USUARIO"><br>
                 <input type="text" class="datos" name="edad" placeholder="    EDAD"><br>
@@ -181,8 +181,8 @@
                 
                 <input type="password" class="datos" name="pass" placeholder="    CONTRASEÑA"><br>
                 <input type="password" class="datos" name="pass" placeholder="    CONFIRMAR CONTRASEÑA"><br>
-                <input type="submit" id="button" value="Registrarse">
-            </form>
+                <button id="button"> Submit </button>
+              </div>
 
           </div>
         </div>

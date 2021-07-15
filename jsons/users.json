@@ -1,0 +1,4 @@
+{
+    "clients":[],
+    "admins":[{"username":"admin","password":"admin","email":""}]
+}
