@@ -21,7 +21,7 @@
         width: 100%;
         max-width: 40em;
     }
-    form{
+    #formulario{
         width: 100%;
         display: flex;
         align-items: center;
@@ -36,7 +36,10 @@
         color: #fff;
         font-size: 1.2em;
     }
-
+    #button:hover{
+      cursor: pointer;
+    }
+    
     .container{
         margin-bottom: 30px;
     }
@@ -137,7 +140,7 @@
           </nav>
         </div>
       </header>
-      <!--About-->
+      <!--SECCION DE DATOS-->
       <section class="section section-sm position-relative">
         <div class="container" id="about">
           <div class="d-flex align-items-center flex-column">
@@ -145,11 +148,11 @@
             <div id="titulo"> 
                 <h3>Bienvenido</h3><hr>
             </div>
-            <form action="/action_page.php">
+            <div id="formulario">
                 <input type="text" class="datos" name="user" placeholder="    USUARIO"><br><br>
                 <input type="text" class="datos" name="pass" placeholder="    CONTRASEÑA"><br><br>
-                <input type="submit" id="button" value="Iniciar sesión">
-            </form>
+                <button id="button" onclick="ComprobarUsuario()">Iniciar sesión</button>
+                </div>
 
           </div>
         </div>
@@ -201,6 +204,44 @@
     <div class="snackbars" id="form-output-global"></div>
     <script src="js/core.min.js"></script>
     <script src="js/script.js"></script>
+
+    <script>
+      function ComprobarUsuario(){
+
+        fetch(" data/clients.json")
+          .then(response => response.json())
+          .then(data => {
+            const usernameCheck = document.getElementsByClassName("datos")[0].value;
+            const passwordCheck = document.getElementsByClassName("datos")[1].value;
+            let checkAdminUser= "admin".localeCompare(usernameCheck)
+            let checkAdminPass= "admin".localeCompare(passwordCheck)
+            var flag=false
+            if (checkAdminPass==0 && checkAdminUser==0) {
+              window.location.href= "administrador.html";
+            }
+            for (let i = 0; i < data.length; i++) {
+              let client = data[i];
+              let username=client["user"]
+              let pass=client["password"]
+              let resUser=username.localeCompare(usernameCheck)
+              let resPass=pass.localeCompare(passwordCheck)
+              if (resUser==0 && resPass==0) {
+                window.location.href= "principal.html";
+                flag=true
+                break
+              }
+            }
+            if (!flag){
+              alert("No se encuentra registrado")
+            }
+            
+
+          })
+          .catch(console.error);
+
+      }
+    </script>
+
     <!--coded by Drel-->
   </body>
 </html>
