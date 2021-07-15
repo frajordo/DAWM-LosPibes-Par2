@@ -8803,3 +8803,118 @@ html.rd-navbar-fixed-linked .page {
 #compromisoImg{
 	margin-top: 1.75px;
 }
+
+.btn-categories{
+	padding: 10px;
+	font-size: 40px;
+
+}
+.title-list{
+	padding-top: 3px;
+	font-family: "sanchez arial";
+	font-size: 2.5rem;
+}
+@media (min-width: 1080px){
+	.first-section{
+		margin-top: 45px;
+	}
+}
+@media (max-width: 1000px){
+		.title-list{
+	padding-top: 8px;
+	font-family: "sanchez arial";
+	font-size: 2rem;
+}
+}
+.dark-pink{
+	background-color: #A56F6F;
+}
+div.card img{
+	height: 170px;
+	margin: 10px 0 10px 10px;
+}
+
+div#articulos div.card{
+	margin-left: 30px;
+	width:340px;
+}
+
+div#articulos div.card h5{
+	font-family: "rancho";
+	font-size: 2rem;
+	font-weight: light;
+}
+div#articulos div.card-body{
+	font-family: "rancho";
+}
+
+
+div#articulos div.card-body p{
+	font-size: 1.2rem;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0 
+
+}
+@font-face{
+	font-family: "rancho";
+	src: url(../fonts/rancho-regular-webfont.woff)
+}
+
+.lefty{
+	padding-left: 0px;
+}
+.righty{
+	padding-right: 0px;
+}
+div.card-body{
+	padding-top: 0px;
+}
+
+div#articulos div.card-body div.button{
+	font-family: "rancho";
+	margin-top: 0;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	margin-left: 11%;
+	margin-right: 11%;
+	background-color: #E4E4E4;
+	color: black;
+}
+
+div#articulos div.card-body div.button:hover{
+	background-color: #6c757d;
+	color: white;
+}
+
+#articulos{
+	display: grid;
+	gap: 10px;
+	grid-auto-rows: 210px;
+	grid-template-columns: repeat(auto-fill,minmax(340px,1fr)) ;
+
+}
+
+.redondo{
+	border-radius: 100%;
+	text-align: center;
+	width: 75px;
+	height: 75px;
+	margin-left: auto;
+	margin-right: auto;
+	color: white;
+	font-size: 80px;
+	cursor: pointer;
+}
+
+.redondo span{
+	position: relative; 
+	bottom:25px;
+	right: 24px; 
+	font-weight:bold;
+	user-select: none;
+
+}
+
+.buscador-inventario{
+	width: 70%;margin-left: auto;margin-right: auto;
+}
