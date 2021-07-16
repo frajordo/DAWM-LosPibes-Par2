@@ -111,18 +111,41 @@
         </div>
         <div class="container">
           <div class="buscador-inventario wow fadeInRight" ><div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Buscar producto" aria-label="Username" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" placeholder="Buscar Usuario" aria-label="Username" aria-describedby="basic-addon1">
             </div></div>
         </div>
 
-        <!----------------grafica----------->
+        <!----------------graficas----------->
         <div class="container">
             <div class="lista-articulos" id="botonesAdmin">
-                <button id="graphB" onclick="verGraph()">Presentar gráfica analítica</button>
+                <button id="graphB" style="margin-bottom: 30px;" onclick="verGraph()">Presentar gráfica analítica</button>
                 
-                <iframe id="graph" width="100%" height="488" frameborder="0" src="https://observablehq.com/embed/@mmarck/admin-pie-chart?cells=viewof+pieChart" ></iframe>              
+                <iframe id="graph" hidden=true width="100%" height="488" frameborder="0" src="https://observablehq.com/embed/@mmarck/admin-pie-chart?cells=viewof+pieChart" ></iframe>              
             </div>
-        </div>            
+        </div> 
+        
+        <div class="container">
+          <div class="lista-articulos" id="botonesAdmin">
+              <button class="botonLadrillo" style="margin-bottom: 30px;" onclick="mostarusuarios()">Listado de usarios</button>
+          
+              <div id="userContainer" hidden=true>
+                <div class="container">
+                  <h2> Usuarios Registrados</h2>
+                  <ul class="responsive-table">
+                    <li class="table-header">
+                      <div class="col col-1">Nombre</div>
+                      <div class="col col-2">Email</div>
+                      <div class="col col-3">genero</div>
+                    </li>
+                    
+                  </ul>
+                </div>
+              </div>
+              
+
+          </div>
+      </div>     
+
       </section>
       <!----------------footer----------->
         <footer class="section footer-classic section-sm">
@@ -181,6 +204,42 @@
             }
             
         }
+
+
+        function mostarusuarios(){
+
+          var table=document.getElementById("userContainer");
+            if (table.hasAttribute("hidden")){
+              table.removeAttribute("hidden")
+            }else{
+              table.setAttribute("hidden","true")
+            }
+            
+            fetch(" data/clients.json")
+              .then(response => response.json())
+              .then(data => {
+
+                var container = document.getElementsByClassName("responsive-table")[0];
+                for(let row of data){
+                  let userName = row["user"];
+                  let email = row["email"];
+                  let genero = row["gender"] == "H" ? "HOMBRE": row["gender"] == "M" ? "MUJER" : "NO DEFINIDO" ;
+                  container.innerHTML += `
+                  <li class="table-row">
+                    <div class="col col-1" data-label="username">`+userName+`</div>
+                    <div class="col col-2" data-label="email">`+email+`</div>
+                    <div class="col col-3" data-label="genero">`+genero+`</div>
+                  </li>`
+
+                }
+                
+    
+              })
+              .catch(console.error);
+    
+          }
+
+
     </script>
     <!--coded by Drel-->
   </body>
