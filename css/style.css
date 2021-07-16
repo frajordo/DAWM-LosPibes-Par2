@@ -8855,6 +8855,8 @@ div#articulos div.card h5{
 	font-family: "rancho";
 	font-size: 2rem;
 	font-weight: light;
+	height: 50px;
+	overflow: hidden;
 }
 div#articulos div.card-body{
 	font-family: "rancho";
@@ -8864,8 +8866,9 @@ div#articulos div.card-body{
 div#articulos div.card-body p{
 	font-size: 1.2rem;
 	padding: 0 0 0 0;
-	margin: 0 0 0 0 
-
+	margin: 0 0 0 0; 
+	height: 40px;
+	overflow: hidden;
 }
 @font-face{
 	font-family: "rancho";
