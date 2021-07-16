@@ -14,7 +14,7 @@ let formato= `<div class="card mb-3 dark-pink text-white">
                   </div>
                </div>`
 
-const extraccionDatos=fetch("../clients.json").
+const extraccionDatos=fetch("../data/clients.json").
 then(response=> response.json()).
 then(data=>{
     const usuario=localStorage.getItem('user')
@@ -35,7 +35,7 @@ then(data=>{
                   <div class="col-md-6 col-6 lefty">
                     <div class="card-body lefty righty">
                       <h5 class="card-title text-white">${articulo.PName} x${articulo.PI}</h5>
-                      <p class="card-text">categoria: ${articulo.PD}</p>
+                      <p class="card-text">${articulo.PD}</p>
                       <p class="card-text">${articulo.PC}</p>
                       <div class="button">Ver/Editar</div>
                     </div>
