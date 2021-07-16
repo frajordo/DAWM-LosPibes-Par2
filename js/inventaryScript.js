@@ -53,7 +53,12 @@ then(data=>{
 
 const setSearchEvent= async()=>{
     const inventario_usuario=await extraccionDatos
-    console.log("posi")
+    let tagNombres=document.getElementById("articulos").getElementsByTagName('h5')
+    for(tagNombre of tagNombres){
+        tagNombre.setAttribute('title',`${tagNombre.innerHTML}`)
+    }
+    
+    mostrarNombre
     document.querySelector('.buscador-inventario').querySelector('input').addEventListener('input', e =>{
         let criterioBusqueda= document.querySelector('.buscador-inventario').querySelector('input').value
         let flags
