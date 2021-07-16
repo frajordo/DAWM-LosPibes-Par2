@@ -51,7 +51,6 @@ then(data=>{
 
 const setSearchEvent= async()=>{
     const inventario_usuario=await extraccionDatos
-    console.log("posi")
     document.querySelector('.buscador-inventario').querySelector('input').addEventListener('input', e =>{
         let criterioBusqueda= document.querySelector('.buscador-inventario').querySelector('input').value
         let flags
@@ -68,7 +67,7 @@ const setSearchEvent= async()=>{
                   </div>
                   <div class="col-md-6 col-6 lefty">
                     <div class="card-body lefty righty">
-                      <h5 class="card-title text-white">${articulo.PName} x${articulo.PI}</h5>
+                      <h5 class="card-title text-white" title="${articulo.PName}">${articulo.PName} x${articulo.PI}</h5>
                       <p class="card-text">categoria: ${articulo.PD}</p>
                       <p class="card-text">${articulo.PC}</p>
                       <div class="button">Ver/Editar</div>
