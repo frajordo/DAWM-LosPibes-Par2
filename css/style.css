@@ -9028,3 +9028,12 @@ div#normal a{
   font-size: 30px;
   font-weight: bold;
 }
+
+#graphB{
+	background-color: #A56F6F;
+    border: none;
+    border-radius: 10px;
+    padding: 0 30px 0 30px;
+    color: #fff;
+    font-size: 1.2em;
+}

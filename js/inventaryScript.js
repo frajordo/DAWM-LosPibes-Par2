@@ -8,7 +8,6 @@ let formato= `<div class="card mb-3 dark-pink text-white">
                       <h5 class="card-title text-white">Cartulina x25</h5>
                       <p class="card-text">categoria: Pacingraf S.A.</p>
                       <p class="card-text">$4.75</p>
-                      <div class="button">Ver/Editar</div>
                     </div>
                   </div>
                   </div>
@@ -37,7 +36,6 @@ then(data=>{
                       <h5 class="card-title text-white">${articulo.PName} x${articulo.PI}</h5>
                       <p class="card-text">${articulo.PD}</p>
                       <p class="card-text">${articulo.PC}</p>
-                      <div class="button">Ver/Editar</div>
                     </div>
                   </div>
                   </div>
