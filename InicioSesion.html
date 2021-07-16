@@ -217,7 +217,7 @@
             let checkAdminPass= "admin".localeCompare(passwordCheck)
             var flag=false
             if (checkAdminPass==0 && checkAdminUser==0) {
-              flag=1;
+              flag=true;
               window.location.href= "principalAdmin.html";
             }
             for (let i = 0; i < data.length; i++) {
