@@ -10,6 +10,8 @@ import { InicioSesionlpComponent } from './inicio-sesionlp/inicio-sesionlp.compo
 import { RegistrarselpComponent } from './registrarselp/registrarselp.component';
 import { PrincipallpComponent } from './principallp/principallp.component';
 import { PrincipalAdminlpComponent } from './principal-adminlp/principal-adminlp.component';
+import { HomelpComponent } from './homelp/homelp.component';
+import { NoticiaslpComponent } from './noticiaslp/noticiaslp.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { PrincipalAdminlpComponent } from './principal-adminlp/principal-adminlp
     InicioSesionlpComponent,
     RegistrarselpComponent,
     PrincipallpComponent,
-    PrincipalAdminlpComponent
+    PrincipalAdminlpComponent,
+    HomelpComponent,
+    NoticiaslpComponent
   ],
   imports: [
     BrowserModule,

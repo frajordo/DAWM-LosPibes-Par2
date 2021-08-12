@@ -4262,7 +4262,7 @@ textarea.form-input {
 	position: relative;
 	overflow: hidden;
 	min-height: 50vh;
-	opacity: 0;
+	opacity: 1;
 }
 
 .page.fadeIn {

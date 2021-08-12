@@ -27,15 +27,13 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css",
               "src/assets/css/fonts.css",
-              "src/assets/css/style.css"
+              "src/assets/css/style.css",
+              "src/assets/css/bootstrap.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/@popperjs/core/dist/umd/popper.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "src/assets/js/script.js",
               "src/assets/js/core.min.js",
               "src/assets/js/require.js",
