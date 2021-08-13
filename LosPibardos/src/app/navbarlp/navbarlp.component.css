@@ -1,0 +1,173 @@
+    /*    VARIABLES     */ 
+
+/* <<<<<<<<<<<<<<<< boton hamburguesa  <<<<<<<<<<<<<<*/ 
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: -80px;
+    left: 56vw;
+  }
+  
+  .hamburger-menu .bar {
+    height: 5px;
+    background: #fff;
+    border-radius: 5px;
+    margin: 3px 0px;
+    transform-origin: left;
+    transition: all 0.5s;
+  }
+  .top{
+    transform: rotate(45deg);
+    width: 1.85rem;
+  }
+  .middle{
+    opacity: 0;
+  }
+
+  .bottom{
+    transform: rotate(-45deg);
+    width: 1.85rem;
+  }
+
+  input#toggle:checked ~div.hamburger-menu .top {
+    transform: rotate(0);
+    width: 1.25rem;
+  }
+  
+
+  input#toggle:checked ~div.hamburger-menu .middle {
+    opacity: 1;
+  }
+
+
+  input#toggle:checked ~div.hamburger-menu .bottom {
+    transform: rotate(0);
+    width: 0.75rem;
+  }
+/* <<<<<<<<<<<<<<<<<<< menu desplegable <<<<<<<<<<<<<<<<<<<<<< */
+
+#menuDesplegable{
+margin: 0;
+display: inline-block;
+position: relative;
+width: 50vw;
+min-width: 320px;
+height: 200px;
+z-index: 1400;
+}
+
+
+input#toggle {
+position: relative;
+top: -80px; 
+left: 31vw;
+width: 20%;
+z-index: 1;
+opacity: 0;
+cursor: pointer;
+height: 40px;
+}
+
+input#toggle:checked ~ul {
+height: 0%;
+}
+
+#menuDesplegable ul {
+position: relative;
+top: -40px; 
+padding-left: 0;
+padding-top: 0;
+margin-top: 0;
+list-style: none;
+overflow: hidden;
+text-align: right;
+margin-bottom: 22px;
+text-align: center;
+transition: all .4s ease-out;
+height: 100%;
+
+}
+#menuDesplegable ul li {
+border-radius: 2px;
+position: relative;
+display: inline-block;
+margin-left: 35px;
+line-height: 1.5;
+width: 100%;
+margin: 0;
+margin-bottom: 5px;
+background: tomato;
+transition: green 3s;
+box-shadow: 2px 2px 10px -2px rgba(0,0,0,.35);
+}
+
+#menuDesplegable ul li:hover {
+background: mediumorchid;
+transition: green .45s;
+}
+
+#menuDesplegable ul a {
+display: block;
+color: ivory;
+text-transform: lowercase;
+font-size: 18px;
+font-weight: 200;
+text-decoration: none;
+transition: color .3s;
+}
+
+
+
+@media (max-width: 1024px){
+
+    #botonesNavBar{
+        display: none;
+    }
+
+    input#toggle {
+      position: relative;
+      left: 32vw;
+      opacity: 0;
+    }
+
+}
+
+@media (min-width: 1025px){
+  .hamburger-menu {
+    display: none;
+  }
+
+  input#toggle {
+    display: none;
+  }
+
+}
+
+@media (max-width: 520px){
+
+  input#toggle {
+    position: relative;
+    left: 25vw;
+    opacity: 0;
+  }
+
+}
+
+@media (max-width: 418px){
+
+  input#toggle {
+    position: relative;
+    left: 18vw;
+    opacity: 0;
+  }
+
+}
+
+
+

@@ -37,7 +37,9 @@
               "src/assets/js/script.js",
               "src/assets/js/core.min.js",
               "src/assets/js/require.js",
-              "src/assets/js/inventaryScript.js"
+              "src/assets/js/inventaryScript.js",
+              "src/assets/js/navbarScripts.js"
+              
             ]
           },
           "configurations": {

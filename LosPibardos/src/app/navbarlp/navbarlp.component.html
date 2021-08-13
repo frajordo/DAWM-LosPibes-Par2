@@ -35,15 +35,13 @@
         <div class="rd-navbar-main">
           <!--RD Navbar Panel-->
           <div class="rd-navbar-panel">
-            <!--RD Navbar Toggle-->
-            <button class="rd-navbar-toggle toggle-original" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
             <!--RD Navbar Brand-->
             <div class="rd-navbar-brand">
               <!--Brand-->
               <a class="brand mt-0" href="index.html" style="font-family: rancho; font-size: 4em; color: black; -webkit-text-stroke: 0.5px white; line-height: 1;">Los Pibes</a>
             </div>
           </div>
-          <div class="rd-navbar-main-element">
+          <div class="rd-navbar-main-element" id="botonesNavBar">
             <div class="rd-navbar-nav-wrap toggle-original-elements">
               <ul class="rd-navbar-nav">
                 <li class="rd-nav-item active"><a routerLink="" class="rd-nav-link">Principal</a>
@@ -61,7 +59,29 @@
               </ul>
             </div>
           </div>
+         
         </div>
       </div>
     </nav>
+    <nav id="menuDesplegable">
+      <!--RD Navbar Toggle-->
+      <input id="toggle" type="checkbox" checked>
+      <div id= "animatedButton" class="hamburger-menu" onclick="desplegarMenuLateral()">
+        <div class="bar top" ></div>
+        <div class="bar middle"></div>
+        <div class="bar bottom" ></div>
+      </div>
+      
+      <ul id="MenuFlotante">
+        <li><a routerLink="" class="rd-nav-link">Principal</a>
+        <li><a routerLink="" class="rd-nav-link">Equipo de desarrollo</a>
+        <li><a routerLink="noticias" class="rd-nav-link">Noticias</a>
+        <li><a routerLink="contacts" class="rd-nav-link">Contactanos</a>
+        <li><a routerLink="inicioSesion" class="rd-nav-link">Iniciar sesión</a>
+        <li><a routerLink="registrar" class="rd-nav-link">Regístrate</a>
+      </ul>
+    </nav>
   </div>
+  
+
+  <script src="assets/js/navbarScripts.js"></script>
