@@ -323,8 +323,14 @@
       </section>--><!--<a class="section section-banner" href="https://www.templatemonster.com/intense-multipurpose-html-template.html" target="_blank" style="background-image: url(images/background-01-1920x310.jpg); background-image: -webkit-image-set( url(images/background-01-1920x310.jpg) 1x, url(images/background-01-3840x620.jpg) 2x )"><img src="images/foreground-01-1600x310.png" srcset="images/foreground-01-1600x310.png 1x, images/foreground-01-3200x620.png 2x" alt="" width="1600" height="310"></a>-->
       
       <!--Seccion de Noticias-->
-      <div id = "normal">
-        <div id="mi-super-contenido">
+      <div id = "normal"onclick="mostrar()">
+      <a style='cursor: pointer'>
+        Ver. Pre-alfa 0.1
+        <br>
+        <h5>Mostrar</h5>
+      </a>
+      </div>
+      <div id="mi-super-contenido">
           <ul>
             <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
             <li>Quisque ac quam sollicitudin nisi posuere volutpat vitae id risus.</li>
@@ -337,14 +343,16 @@
             <li>Donec pellentesque mi ut nunc porta ullamcorper hendrerit in ipsum.</li>
             <li>In convallis neque nec volutpat tempus.</li>
           </ul>
+          <h5 style= "cursor: pointer" onclick="ocultar();">Ocultar</h5>
         </div>
-      <a style='cursor: pointer;' onclick="mostrarOcultar('mi-super-contenido')">
-        Ver. pre-alfa 0.1
+      <div id = "normal"onclick="mostrar2()">
+      <a style='cursor: pointer'>
+        Ver. Pre-alfa 0.05
+        <br>
+        <h5>Mostrar</h5>
       </a>
       </div>
-
-      <div id = "normal">
-        <div id="mi-super-contenido2">
+      <div id="mi-super-contenido2">
           <ul>
             <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
             <li>Quisque ac quam sollicitudin nisi posuere volutpat vitae id risus.</li>
@@ -357,11 +365,8 @@
             <li>Donec pellentesque mi ut nunc porta ullamcorper hendrerit in ipsum.</li>
             <li>In convallis neque nec volutpat tempus.</li>
           </ul>
+          <h5 style= "cursor: pointer" onclick="ocultar2()">Ocultar</h5>
         </div>
-      <a style='cursor: pointer;' onclick="mostrarOcultar('mi-super-contenido2')">
-        Ver. pre-alfa 0.05
-      </a>
-      </div>
       
       <footer class="section footer-classic section-sm">
         <div class="container">
