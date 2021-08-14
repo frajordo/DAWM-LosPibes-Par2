@@ -1095,7 +1095,7 @@
 		}
 	});
 }());
-const mostrar = (elemento) => {
+/*-const mostrar = (elemento) => {
     elemento.style.display = 'block';
 }
 const ocultar = (elemento) => {
@@ -1108,4 +1108,16 @@ const mostrarOcultar = (id) => {
       return false;
     }
     mostrar(div);
+}*/
+function mostrar(){
+  document.getElementById("mi-super-contenido").style.display = "block";
+}
+function mostrar2(){
+  document.getElementById("mi-super-contenido2").style.display = "block";
+}
+function ocultar(){
+    document.getElementById("mi-super-contenido").style.display = "none";
+}
+function ocultar2(){
+    document.getElementById("mi-super-contenido2").style.display = "none";
 }
