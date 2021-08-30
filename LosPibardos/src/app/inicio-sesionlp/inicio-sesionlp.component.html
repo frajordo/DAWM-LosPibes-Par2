@@ -55,13 +55,20 @@
           <div class="d-flex align-items-center flex-column">
 
             <div id="titulo"> 
-                <h3>Bienvenido</h3><hr>
+              <h3>Bienvenido</h3><hr>
             </div>
             <div id="formulario">
-                <input type="text" class="datos" name="user" placeholder="    USUARIO"><br><br>
-                <input type="text" class="datos" name="pass" placeholder="    CONTRASEÑA"><br><br>
-                <button id="button" onclick="ComprobarUsuario()">Iniciar sesión</button>
-                </div>
+              
+              <input type="text" class="datos" name="user" placeholder="    USUARIO"><br><br>
+              <input type="text" class="datos" name="pass" placeholder="    CONTRASEÑA"><br><br>
+              <select class="datos" id="tipoUser" name="tipoUser">
+                <option selected disabled hidden>--Tipo de Usuario--</option>
+                <option value="0">Normal</option>
+                <option value="1">Adminisitrador</option>
+              </select>
+              <br>
+              <button id="button" onclick="ComprobarUsuario()">Iniciar sesión</button>
+            </div>
 
           </div>
         </div>
@@ -72,7 +79,7 @@
     <script>
       function ComprobarUsuario(){
 
-        fetch(" data/clients.json")
+        fetch("http://localhost:3000")
           .then(response => response.json())
           .then(data => {
             const usernameCheck = document.getElementsByClassName("datos")[0].value;
