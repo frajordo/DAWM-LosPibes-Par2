@@ -8859,13 +8859,12 @@ div#articulos div.card h5{
 	overflow: hidden;
 }
 div#articulos div.card-body{
-	font-family: "rancho";
+	font-family: "Poppins", sans-serif;
 }
 
 
 div#articulos div.card-body p{
-	font-size: 1.2rem;
-	padding: 0 0 0 0;
+	padding: 15px 0 0 0;
 	margin: 0 0 0 0; 
 	height: 40px;
 	overflow: hidden;
@@ -9122,5 +9121,14 @@ div#normal a{
 		flex-basis: 50%;
 		text-align: right;
 	}
+}
+
+.element-title{
+	padding-right: 10px;
+	padding-top: 10px;
+}
+
+.element-img{
+	max-width: 150px;
 }
 	

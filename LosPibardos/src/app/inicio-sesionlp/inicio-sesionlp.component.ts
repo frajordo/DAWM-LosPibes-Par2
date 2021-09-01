@@ -1,5 +1,6 @@
 import { Component, OnInit, setTestabilityGetter } from '@angular/core';
 import {DataUserService} from "../data-user.service";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-inicio-sesionlp',
@@ -24,9 +25,6 @@ export class InicioSesionlpComponent implements OnInit {
   }
 
   ComprobarUsuarios(){
-    console.log(this.selectedOption);
-    console.log(this.usernameCheck);
-    console.log(this.passwordCheck);
     var x=""
     if (this.selectedOption!="") {
       if (this.selectedOption==="0") {
@@ -45,9 +43,10 @@ export class InicioSesionlpComponent implements OnInit {
             flag=true
             let password=data[i].password
             if (password===this.passwordCheck){
-              alert("¡Se ha encontrado!")
-            } else{
               this.dataUser=this.usernameCheck;
+              this.router.navigateByUrl("/main")
+            } else{
+              alert("Contraseña incorrecta.");
             }
           }
         }
@@ -61,7 +60,7 @@ export class InicioSesionlpComponent implements OnInit {
       alert("¡Escoja un tipo!")
     } 
   }
-  constructor(private dataUserService: DataUserService) {
+  constructor(private dataUserService: DataUserService, private router: Router) {
     this.selectedOption="";
     this.passwordCheck="";
     this.usernameCheck="";

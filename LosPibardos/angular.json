@@ -29,8 +29,8 @@
             "styles": [
               "src/styles.css",
               "src/assets/css/fonts.css",
-              "src/assets/css/style.css",
-              "src/assets/css/bootstrap.css"
+              "src/assets/css/bootstrap.css",
+              "src/assets/css/style.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
