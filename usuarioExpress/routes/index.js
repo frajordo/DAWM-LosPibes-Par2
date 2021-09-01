@@ -5,7 +5,7 @@ const Sequelize=require("sequelize");
 const users=require("../models").users;
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/users', function(req, res, next) {
   users.findAll({
     where:{tipo:0},
     attributes: { exclude: ["id"]}

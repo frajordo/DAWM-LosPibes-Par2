@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { PrincipallpComponent } from './principallp/principallp.component';
 import { PrincipalAdminlpComponent } from './principal-adminlp/principal-adminlp.component';
 import { HomelpComponent } from './homelp/homelp.component';
 import { NoticiaslpComponent } from './noticiaslp/noticiaslp.component';
+import {DataUserService} from "./data-user.service";
 
 @NgModule({
   declarations: [
@@ -28,9 +30,10 @@ import { NoticiaslpComponent } from './noticiaslp/noticiaslp.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [DataUserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

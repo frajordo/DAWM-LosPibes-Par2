@@ -57,61 +57,22 @@
             <div id="titulo"> 
               <h3>Bienvenido</h3><hr>
             </div>
-            <div id="formulario">
+            <form id="formulario">
               
-              <input type="text" class="datos" name="user" placeholder="    USUARIO"><br><br>
-              <input type="text" class="datos" name="pass" placeholder="    CONTRASEÑA"><br><br>
-              <select class="datos" id="tipoUser" name="tipoUser">
-                <option selected disabled hidden>--Tipo de Usuario--</option>
-                <option value="0">Normal</option>
-                <option value="1">Adminisitrador</option>
+              <input [(ngModel)]="usernameCheck" type="text" class="datos" name="user" placeholder="    USUARIO"><br><br>
+              <input [(ngModel)]="passwordCheck" type="text" class="datos" name="pass" placeholder="    CONTRASEÑA"><br><br>
+              <select class="datos" id="tipoUser" name="tipoUser" [(ngModel)]="selectedOption">
+                <option [value]="o.value" *ngFor="let o of options">
+                  {{o.name}}
+                </option>
               </select>
               <br>
-              <button id="button" onclick="ComprobarUsuario()">Iniciar sesión</button>
-            </div>
+              <button id="button" (click)="ComprobarUsuarios()">Iniciar sesión</button>
+            </form>
 
           </div>
         </div>
       </section>
     </div>
     <div class="snackbars" id="form-output-global"></div>
-
-    <script>
-      function ComprobarUsuario(){
-
-        fetch("http://localhost:3000")
-          .then(response => response.json())
-          .then(data => {
-            const usernameCheck = document.getElementsByClassName("datos")[0].value;
-            const passwordCheck = document.getElementsByClassName("datos")[1].value;
-            let checkAdminUser= "admin".localeCompare(usernameCheck)
-            let checkAdminPass= "admin".localeCompare(passwordCheck)
-            var flag=false
-            if (checkAdminPass==0 && checkAdminUser==0) {
-              flag=true;
-              window.location.href= "principalAdmin.html";
-            }
-            for (let i = 0; i < data.length; i++) {
-              let client = data[i];
-              let username=client["user"]
-              let pass=client["password"]
-              let resUser=username.localeCompare(usernameCheck)
-              let resPass=pass.localeCompare(passwordCheck)
-              if (resUser==0 && resPass==0) {
-                window.location.href= "principal.html";
-                localStorage.setItem("user",username)
-                flag=true
-                break
-              }
-            }
-            if (!flag){
-              alert("No se encuentra registrado")
-            }
-            
-
-          })
-          .catch(console.error);
-
-      }
-    </script>
     <!--coded by Drel-->

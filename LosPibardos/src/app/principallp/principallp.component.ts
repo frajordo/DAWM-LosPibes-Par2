@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DataUserService} from "../data-user.service";
 
 @Component({
   selector: 'app-principallp',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrincipallpComponent implements OnInit {
 
-  constructor() { }
+
+  get dataUser():string {
+    return this.dataUserService.username;
+  }
+  constructor(private dataUserService: DataUserService) { }
 
   ngOnInit(): void {
   }
