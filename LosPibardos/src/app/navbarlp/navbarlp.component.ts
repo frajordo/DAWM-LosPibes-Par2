@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import {Router} from '@angular/router';
+import {DataUserService} from "../data-user.service";
 
 @Component({
   selector: 'navbarlp',
@@ -8,29 +9,21 @@ import {Router} from '@angular/router';
   styleUrls: ['./navbarlp.component.css']
 })
 export class NavbarlpComponent implements OnInit {
-
-  firstNav={name:"Iniciar Sesión",route:"inicioSesion"}
-  lastNav={name:"Registrarse", route:"registrar"}
-
+  isUserLoggedIn: boolean;
   salir(){
     if (this.cookieService.get("username")!=""){
       this.cookieService.set("username","");
-      this.lastNav.name="Registrarse";
-      this.lastNav.route="registrar";
+      this.dataUserService.isUserLoggedIn.next(false);
       this.router.navigateByUrl("/inicioSesion")
-      
     } 
   }
   
 
-  constructor(private cookieService:CookieService, private router:Router) {
-    if (this.cookieService.get("username")!=""){
-      this.lastNav.name="Cerrar Sesión";
-      this.lastNav.route="inicioSesion";
-    } else{
-      this.lastNav.name="Registrarse";
-      this.lastNav.route="registrar";
-    }
+  constructor(private cookieService:CookieService, private router:Router, private dataUserService: DataUserService) {
+    this.isUserLoggedIn=false;
+    this.dataUserService.isUserLoggedIn.subscribe( value => {
+      this.isUserLoggedIn = value;
+    });
   }
 
   ngOnInit(): void {

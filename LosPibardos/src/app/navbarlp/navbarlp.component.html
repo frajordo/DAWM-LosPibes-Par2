@@ -52,9 +52,13 @@
                 </li>
                 <li class="rd-nav-item"><a routerLink="contacts" class="rd-nav-link">Contactanos</a>
                 </li>
-                <li class="rd-nav-item" [(ngModel)]="firstNav" ><a [routerLink]="firstNav.route" class="rd-nav-link" >{{firstNav.name}}</a>
+                <li class="rd-nav-item" *ngIf="!isUserLoggedIn" ><a routerLink="inicioSesion" class="rd-nav-link">Iniciar sesión</a>
                 </li>
-                <li class="rd-nav-item" [(ngModel)]="lastNav" ><a [routerLink]="lastNav.route" (click)="salir()" class="rd-nav-link" >{{lastNav.name}}</a>
+                <li class="rd-nav-item" *ngIf="!isUserLoggedIn" ><a routerLink="registrar" class="rd-nav-link">Regístrate</a>
+                </li>
+                <li class="rd-nav-item" *ngIf="isUserLoggedIn" ><a routerLink="main" class="rd-nav-link">Home</a>
+                </li>
+                <li class="rd-nav-item" *ngIf="isUserLoggedIn" ><a routerLink="inicioSesion" (click)="salir()" class="rd-nav-link">Cerrar Sesión</a>
                 </li>
                 <!--
                 <li class="rd-nav-item"><a routerLink="" class="rd-nav-link">Principal</a>

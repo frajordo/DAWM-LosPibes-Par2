@@ -12,6 +12,7 @@ export class InicioSesionlpComponent implements OnInit {
   selectedOption: string;
   usernameCheck: string;
   passwordCheck: string;
+  isUserLoggedIn: boolean;
   options=[
     {name:"Normal",value:"0"},
     {name:"Administrador",value:"1"}
@@ -46,6 +47,7 @@ export class InicioSesionlpComponent implements OnInit {
             if (password===this.passwordCheck){
               this.dataUser=this.usernameCheck;
               this.cookieService.set("username",this.usernameCheck)
+              this.dataUserService.isUserLoggedIn.next(true);
               if (x==="/users"){
                 this.router.navigateByUrl("/main")
               } else {
@@ -71,6 +73,10 @@ export class InicioSesionlpComponent implements OnInit {
     this.selectedOption="";
     this.passwordCheck="";
     this.usernameCheck="";
+    this.isUserLoggedIn=false;
+    this.dataUserService.isUserLoggedIn.subscribe( value => {
+      this.isUserLoggedIn = value;
+    });
    }
 
   ngOnInit(): void {
