@@ -44,7 +44,12 @@ export class InicioSesionlpComponent implements OnInit {
             let password=data[i].password
             if (password===this.passwordCheck){
               this.dataUser=this.usernameCheck;
-              this.router.navigateByUrl("/main")
+              if (x==="/users"){
+                this.router.navigateByUrl("/main")
+              } else {
+                this.router.navigateByUrl("/mainAdmin")
+              }
+              
             } else{
               alert("Contraseña incorrecta.");
             }

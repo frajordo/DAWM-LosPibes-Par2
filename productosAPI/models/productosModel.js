@@ -3,12 +3,12 @@ var Schema   = mongoose.Schema;
 
 var productosSchema = new Schema({
 	'user_id' : String,
-	'name' : String,
+	'nombre' : String,
 	'precio' : String,
-	'cant' : String,
+	'cantidad' : String,
 	'direccion' : String,
-	'prov' : String,
-	'img' : String
+	'categoria' : String,
+	'imagen' : String
 });
 
 module.exports = mongoose.model('productos', productosSchema);

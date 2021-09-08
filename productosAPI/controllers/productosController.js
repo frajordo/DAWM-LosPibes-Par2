@@ -52,13 +52,13 @@ module.exports = {
      */
     create: function (req, res) {
         var productos = new ProductosModel({
-			user_id : req.body.user_id,
-			name : req.body.name,
+			user_id : req.params.id,
+			nombre : req.body.nombre,
 			precio : req.body.precio,
-			cant : req.body.cant,
+			cantidad : req.body.cantidad,
 			direccion : req.body.direccion,
-			prov : req.body.prov,
-			img : req.body.img
+			categoria : req.body.categoria,
+			imagen : req.body.imagen
         });
 
         productos.save(function (err, productos) {

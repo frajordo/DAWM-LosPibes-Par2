@@ -78,13 +78,14 @@
                 <h3>Crea tu cuenta</h3><hr>
             </div>
             <div id="formulario">
-                <input type="text" class="datos" name="email" placeholder="    EMAIL"><br>
-                <input type="text" class="datos" name="user" placeholder="    USUARIO"><br>
-                <input type="text" class="datos" name="edad" placeholder="    EDAD"><br>
-                <input type="text" class="datos" name="password" placeholder="    CONTRASEÑA"><br>
+                <input [(ngModel)]="user" type="text" class="datos" name="user" placeholder="    USUARIO"><br>
+                <input [(ngModel)]="password" type="text" class="datos" name="password" placeholder="    CONTRASEÑA"><br>
+                <input [(ngModel)]="edad" type="number" class="datos" name="edad" placeholder="    EDAD"><br>
+                <input [(ngModel)]="email" type="text" class="datos" name="email" placeholder="    EMAIL"><br>
+                
                 <div class="selector-container">
                   <label for="gender" class="label" id="gender-label">Escoja un género</label> 
-                  <select name="gender" class="datos" id="gender">
+                  <select [(ngModel)]="gender" name="gender" class="datos" id="gender">
                     <option value="H">Hombre</option>
                     <option value="M">Mujer</option>
                     <option value="O">Otro</option>
@@ -92,7 +93,7 @@
                 </div><br>
                 <div class="selector-container">
                   <label for="gender" class="label" id="why-label">¿Para qué va a usar nuestro producto?</label> 
-                  <select name="gender" class="datos" id="razon">
+                  <select [(ngModel)]="why" name="gender" class="datos" id="razon">
                     <option value="NF">Negocio Familiar</option>
                     <option value="NP">Negocio pequeño</option>
                     <option value="TC">Tienda clandestina</option>
@@ -100,8 +101,8 @@
                   </select>
                 </div><br>
                 
-                <button id="button" onclick="guardarDatos()"  >Registrarse</button> 
-              </div>
+                <button id="button" (click)="registrar()"  >Registrarse</button> 
+            </div>
 
           </div>
         </div>

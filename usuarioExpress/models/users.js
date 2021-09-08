@@ -3,7 +3,8 @@ module.exports = function(sequelize, DataTypes) {
   return sequelize.define('users', {
     user: {
       type: DataTypes.STRING(20),
-      allowNull: true
+      primaryKey: true,
+      allowNull: false
     },
     password: {
       type: DataTypes.STRING(20),
@@ -35,3 +36,4 @@ module.exports = function(sequelize, DataTypes) {
     timestamps: false
   });
 };
+

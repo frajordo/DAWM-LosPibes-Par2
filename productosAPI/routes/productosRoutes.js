@@ -15,7 +15,7 @@ router.get('/:id', productosController.show);
 /*
  * POST
  */
-router.post('/', productosController.create);
+router.post('/:id', productosController.create);
 
 /*
  * PUT
