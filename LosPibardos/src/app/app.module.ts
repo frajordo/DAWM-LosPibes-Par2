@@ -17,6 +17,8 @@ import { NoticiaslpComponent } from './noticiaslp/noticiaslp.component';
 
 import {DataUserService} from "./data-user.service";
 import { CookieService } from 'ngx-cookie-service';
+import {NewproductComponent} from './newproduct/newproduct.component';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { CookieService } from 'ngx-cookie-service';
     PrincipallpComponent,
     PrincipalAdminlpComponent,
     HomelpComponent,
-    NoticiaslpComponent
+    NoticiaslpComponent,
+    NewproductComponent
   ],
   imports: [
     BrowserModule,
