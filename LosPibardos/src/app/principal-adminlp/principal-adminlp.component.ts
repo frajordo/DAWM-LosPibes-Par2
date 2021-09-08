@@ -12,7 +12,28 @@ export class PrincipalAdminlpComponent implements OnInit {
 
   constructor(private elementRef:ElementRef) {}
 
+  verGraphEdad() : void{
+    this.changeDisplay('barGraph')
+  }
 
+  verGraphGen() : void{
+    this.changeDisplay('pieGraph')
+  }
+
+    verGraphRaz() : void{
+    this.changeDisplay('scatterGraph')
+  }
+
+  changeDisplay(id : string) : void{
+    let graficasCont=this.elementRef.nativeElement.querySelector('#graficasCont').children;
+    for( let grafica of graficasCont){
+      if(id == grafica.getAttribute('id')){
+         grafica.setAttribute('style','display:block');
+      }else{
+         grafica.setAttribute('style','display:none');
+      }
+    }
+  }
   siftUsers(){
     let users = this.elementRef.nativeElement.querySelector('#usersByWhyContentTable').children;
     let selectedOptionWhy =  this.elementRef.nativeElement.querySelector('#usersSelect').selectedOptions[0].value;

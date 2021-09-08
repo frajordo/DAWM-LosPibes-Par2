@@ -19,6 +19,9 @@ import {DataUserService} from "./data-user.service";
 import { CookieService } from 'ngx-cookie-service';
 import {NewproductComponent} from './newproduct/newproduct.component';
 
+import { BarComponent } from './bar/bar.component';
+import { PieComponent } from './pie/pie.component';
+import { ScatterComponent } from './scatter/scatter.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import {NewproductComponent} from './newproduct/newproduct.component';
     PrincipalAdminlpComponent,
     HomelpComponent,
     NoticiaslpComponent,
-    NewproductComponent
+    NewproductComponent,
+    BarComponent,
+    PieComponent,
+    ScatterComponent
   ],
   imports: [
     BrowserModule,
