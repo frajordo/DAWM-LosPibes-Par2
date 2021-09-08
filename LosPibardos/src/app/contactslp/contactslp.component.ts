@@ -18,9 +18,14 @@ export class ContactslpComponent implements OnInit {
     } else{
       const email={
         subject:(this.name+"-"+this.subject),
-        body:this.html
+        body:this.html,
+        html:"<p>"+this.html+"</p>"
       }
       this.http.post<any>("http://localhost:3003/send-email",email)
+      .subscribe(
+        data => console.log('success', data),
+        error=>console.log("oops",error)
+      );
       this.name=""; this.subject=""; this.html=""
       alert("Tu mensaje ha sido enviado exitosamente")
     }

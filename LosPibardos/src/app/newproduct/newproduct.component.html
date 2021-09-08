@@ -6,15 +6,15 @@
     <form class="form-signin"> 
       <div class="buttonContainer"> <button id="cancelButton" (click)='hideNewProductForm()'></button>   </div>   
       <h2 class="form-signin-heading">Añadir un Producto</h2>
-      <input type="text" class="form-control" name="nombre" placeholder="nombre" required="" autofocus="" />
-      <input type="text" class="form-control" name="precio" placeholder="precio" />
-      <input type="text" class="form-control" name="cantidad" placeholder="cantidad" />
-      <input type="text" class="form-control" name="direccion" placeholder="direccion" />
+      <input type="text" class="form-control" [(ngModel)]="nombre" name="nombre" placeholder="nombre" required="" autofocus="" />
+      <input type="text" class="form-control" [(ngModel)]="precio" name="precio" placeholder="precio" />
+      <input type="text" class="form-control" [(ngModel)]="cantidad" name="cantidad" placeholder="cantidad" />
+      <input type="text" class="form-control" [(ngModel)]="direccion" name="direccion" placeholder="direccion" />
 
-      <input type="text" class="form-control" name="categoria" placeholder="categoria" />
-      <input type="text" class="form-control" name="imagen" placeholder="url imagen" />
+      <input type="text" class="form-control" [(ngModel)]="categoria" name="categoria" placeholder="categoria" />
+      <input type="text" class="form-control" [(ngModel)]="imagen" name="imagen" placeholder="url imagen" />
 
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Guardar</button>   
+      <button (click)="newProduct()" class="btn btn-lg btn-primary btn-block" type="submit">Guardar</button>   
     </form>
   </div>
 

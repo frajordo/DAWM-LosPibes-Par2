@@ -31,7 +31,7 @@ app.post('/send-email', function (req, res) {
       }
   });
   let mailOptions = {
-      from: '"Los Pibes" <lospibesDAWM@hotmail.com>', // sender address
+      from: '"User" <lospibesDAWM@hotmail.com>', // sender address
       to: 'lospibesDAWM@hotmail.com', // list of receivers
       subject: req.body.subject, // Subject line
       text: req.body.body, // plain text body
