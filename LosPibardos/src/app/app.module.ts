@@ -14,7 +14,9 @@ import { PrincipallpComponent } from './principallp/principallp.component';
 import { PrincipalAdminlpComponent } from './principal-adminlp/principal-adminlp.component';
 import { HomelpComponent } from './homelp/homelp.component';
 import { NoticiaslpComponent } from './noticiaslp/noticiaslp.component';
+
 import {DataUserService} from "./data-user.service";
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,7 @@ import {DataUserService} from "./data-user.service";
     FormsModule,
     HttpClientModule
   ],
-  providers: [DataUserService],
+  providers: [DataUserService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DataUserService} from "../data-user.service";
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-principallp',
@@ -8,12 +9,16 @@ import {DataUserService} from "../data-user.service";
 })
 export class PrincipallpComponent implements OnInit {
   
+  set dataUser(value: string){
+    this.dataUserService.username=value;
+  }
 
   get dataUser():string {
     return this.dataUserService.username;
   }
   
   inventoryScript(){
+    
     if(this.dataUser!=""){
       console.log("http://localhost:3005/productos/"+this.dataUser)
       fetch(("http://localhost:3005/productos/"+this.dataUser))
@@ -44,7 +49,8 @@ export class PrincipallpComponent implements OnInit {
   }
 
 
-  constructor(private dataUserService: DataUserService) { 
+  constructor(private dataUserService: DataUserService, private cookieService: CookieService) { 
+    this.dataUser=this.cookieService.get("username")
     this.inventoryScript();
   }
 

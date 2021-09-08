@@ -1,5 +1,6 @@
 import { Component, OnInit, setTestabilityGetter } from '@angular/core';
 import {DataUserService} from "../data-user.service";
+import { CookieService } from 'ngx-cookie-service';
 import {Router} from '@angular/router';
 
 @Component({
@@ -44,6 +45,7 @@ export class InicioSesionlpComponent implements OnInit {
             let password=data[i].password
             if (password===this.passwordCheck){
               this.dataUser=this.usernameCheck;
+              this.cookieService.set("username",this.usernameCheck)
               if (x==="/users"){
                 this.router.navigateByUrl("/main")
               } else {
@@ -65,7 +67,7 @@ export class InicioSesionlpComponent implements OnInit {
       alert("¡Escoja un tipo!")
     } 
   }
-  constructor(private dataUserService: DataUserService, private router: Router) {
+  constructor(private dataUserService: DataUserService, private router: Router, private cookieService: CookieService) {
     this.selectedOption="";
     this.passwordCheck="";
     this.usernameCheck="";
