@@ -14,6 +14,9 @@ import { PrincipalAdminlpComponent } from './principal-adminlp/principal-adminlp
 import { HomelpComponent } from './homelp/homelp.component';
 import { NoticiaslpComponent } from './noticiaslp/noticiaslp.component';
 import {DataUserService} from "./data-user.service";
+import { BarComponent } from './bar/bar.component';
+import { PieComponent } from './pie/pie.component';
+import { ScatterComponent } from './scatter/scatter.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import {DataUserService} from "./data-user.service";
     PrincipallpComponent,
     PrincipalAdminlpComponent,
     HomelpComponent,
-    NoticiaslpComponent
+    NoticiaslpComponent,
+    BarComponent,
+    PieComponent,
+    ScatterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,18 @@
+app-bar{
+	display:none;
+}
+app-pie{
+	display:none;
+}
+app-scatter{
+	display:none;
+}
+
+#botonesGraficas{
+	display: flex;
+	justify-content: space-between;
+}
+
+#botonesGraficas button{
+	cursor: pointer;
+}
