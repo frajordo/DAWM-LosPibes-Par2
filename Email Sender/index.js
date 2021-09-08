@@ -1,59 +1,52 @@
-const express = require("express");
-const cors = require("cors");
-const bodyParser = require("body-parser");
-const nodemailer = require("nodemailer");
-
-const details = require("./details.json");
+const express = require('express')
+const nodeMailer = require('nodemailer')
+const bodyParser = require('body-parser')
+const cors = require('cors')
 
 const app = express();
-app.use(cors({ origin: "*" }));
+
+const port = 3003;
+
+app.use(cors({
+    origin: '*',
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization', 'Content-Length', 'X-Requested-With', 'Accept'],
+    methods: ['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS'],
+    optionsSuccessStatus: 200 
+  }));
+
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-
-//start application server on port 3000
-app.listen(3000, () => {
-  console.log("The server started on port 3000");
-});
-
-app.get("/", (req, res) => {
-  res.send(
-    "<h1 style='text-align: center'>Wellcome</h1>"
-  );
-});
-
-app.post("/sendmail", (req, res) => {
-  console.log("request came");
-  let user = req.body;
-  sendMail(user, (err, info) => {
-    if (err) {
-      console.log(err);
-      res.status(400);
-      res.send({ error: "Failed to send email" });
-    } else {
-      console.log("Email has been sent");
-      res.send(info);
-    }
+app.post('/send-email', function (req, res) {
+  let transporter = nodeMailer.createTransport({
+      host: "smtp-mail.outlook.com", 
+      secureConnection: false,
+      port: 587,
+      tls: {
+        ciphers:'SSLv3'
+     },
+      auth: {
+          user: 'lospibesDAWM@hotmail.com',
+          pass: 'lospibes12345'
+      }
   });
-});
-
-async function sendMail(user, callback) {
-  // create reusable transporter object using the default SMTP transport
-  let transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
-    secure: false, // true for 465, false for other ports
-    auth: {
-      user: details.email,
-      pass: details.password
-    }
-  });
-
-  const mailOptions = {
-    from: `"<Sender’s name>", "<Sender’s email>"`,
-    to: `<${user.email}>`,
-    subject: "<Message subject>",
-    html: "<h1>And here is the place for HTML</h1>"
+  let mailOptions = {
+      from: '"User" <lospibesDAWM@hotmail.com>', // sender address
+      to: 'lospibesDAWM@hotmail.com', // list of receivers
+      subject: req.body.subject, // Subject line
+      text: req.body.body, // plain text body
+      html: req.body.html // html body
   };
-
-  // send mail with defined transport object
-  transporter.sendMail(mailOptions, callback);
-}
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      res.sendStatus(500);
+      return console.log(error);
+    }
+    console.log('Message %s sent: %s', info.messageId, info.response);
+    res.sendStatus(200);
+    });
+});
+app.listen(port, function () {
+    console.log(`🚀 Server ready at http://localhost:${port}`);
+  
+  });
