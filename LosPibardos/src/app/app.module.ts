@@ -15,6 +15,8 @@ import { PrincipalAdminlpComponent } from './principal-adminlp/principal-adminlp
 import { HomelpComponent } from './homelp/homelp.component';
 import { NoticiaslpComponent } from './noticiaslp/noticiaslp.component';
 import {DataUserService} from "./data-user.service";
+import {NewproductComponent} from './newproduct/newproduct.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import {DataUserService} from "./data-user.service";
     PrincipallpComponent,
     PrincipalAdminlpComponent,
     HomelpComponent,
-    NoticiaslpComponent
+    NoticiaslpComponent,
+    NewproductComponent
   ],
   imports: [
     BrowserModule,

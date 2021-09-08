@@ -44,6 +44,15 @@ export class PrincipallpComponent implements OnInit {
   }
 
 
+  showNewProductForm(){
+    var formContainer = document.getElementsByTagName("newproduct")[0];
+    formContainer.setAttribute("id","showFrom");
+
+    var inventarioContainer = document.getElementsByClassName("page")[0];
+    inventarioContainer.setAttribute("id","expandContainer");
+
+  }
+
   constructor(private dataUserService: DataUserService) { 
     this.inventoryScript();
   }

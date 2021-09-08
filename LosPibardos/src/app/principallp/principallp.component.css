@@ -1,0 +1,21 @@
+#showFrom{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+  }
+
+#hideForm{
+    display:none;
+}
+
+#expandContainer{
+    min-height:120vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}  
+#contractContainer{
+    min-height:50vh;
+    display: block;
+}

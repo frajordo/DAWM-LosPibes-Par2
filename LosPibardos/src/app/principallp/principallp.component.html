@@ -1,7 +1,12 @@
 <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <div class="page">
+      <!-- panel para ingreso de nuevo producto   -->
+      <newproduct id='hideForm'></newproduct>
+
       <!----------------content------------>
       <section class="section section-lg position-relative first-section" id="inventario">
+        
+
         <div class="row">
           <div class="col-2">
           </div>
@@ -24,7 +29,7 @@
                </div>                 
             </div>
             <div style="margin-left: 45%; margin-right: 45%;">
-              <div class="button redondo dark-pink button-primary" data-bs-toggle="modal" data-bs-target="#formNuevoProducto">
+              <div class="button redondo dark-pink button-primary" data-bs-toggle="modal" data-bs-target="#formNuevoProducto" (click)='showNewProductForm()'>
                <span>+</span>
               </div>
             </div>
