@@ -2,10 +2,26 @@
 .wrapper {	
 	margin-top: 80px;
   margin-bottom: 80px;
-	
+  position: relative;
+  left: 30vw;
+  top: 20vh;
+}
+@media screen and (max-width: 640px) {
+  .wrapper {	
+    left: 12vw;
+  }
+
 }
 
-
+#grayBackgroud{
+  background-color: #80808096;
+  width: 200vw;
+  height: 600vh;
+  position: absolute;
+  z-index: -1;
+  left: -30vw;
+  top: -25vh;
+}
 
 .form-signin {
   max-width: 380px;
@@ -31,23 +47,23 @@
 
 	}
 
+  input{
+    margin-bottom: 5px;
+  }
+
 	input[type="text"] {
 	  margin-bottom: -1px;
 	  border-bottom-left-radius: 0;
 	  border-bottom-right-radius: 0;
 	}
 
-	input[type="password"] {
-	  margin-bottom: 20px;
-	  border-top-left-radius: 0;
-	  border-top-right-radius: 0;
-	}
 
-    .btn{
-        background: #A56F6F;
-        border-color: #A56F6F;
-        font-family: "sanchez arial";
-    }
+
+  .btn{
+      background: #A56F6F;
+      border-color: #A56F6F;
+      font-family: "sanchez arial";
+  }
 
     h2{
         font-family: "sanchez arial";

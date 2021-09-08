@@ -34,6 +34,7 @@ export class PrincipallpComponent implements OnInit {
                 </div>
                 <div class="col-md-6 col-6 lefty">
                   <div class="card-body lefty">
+                    <div class="buttonContainer"> <button class="cancelButton" onclick="deleteProduct(  '${articulo._id}'  )" ></button>   </div>
                     <h6 class="text-white element-title">${articulo.nombre}x${articulo.cantidad}</h6>
                     <p class="card-text">${articulo.categoria}</p>
                     <p class="card-text">$${articulo.precio}</p>
@@ -42,6 +43,7 @@ export class PrincipallpComponent implements OnInit {
               </div>
             </div>`
         }
+        /* Para editar la funcion deleteProducto buscar al final de src/assets/js/inventoryScript.js */
       })
       .catch(console.error)
     }

@@ -11,9 +11,7 @@
 
 #expandContainer{
     min-height:120vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
 }  
 #contractContainer{
     min-height:50vh;

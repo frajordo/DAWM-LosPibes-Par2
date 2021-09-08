@@ -81,3 +81,8 @@ const setSearchEvent= async()=>{
     })
 }
 setSearchEvent()
+
+var deleteProduct = (idProducto ) =>{
+  console.log("tratando de eliminar : " + idProducto);
+ 
+}

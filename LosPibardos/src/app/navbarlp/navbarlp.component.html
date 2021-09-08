@@ -44,19 +44,20 @@
           <div class="rd-navbar-main-element" id="botonesNavBar">
             <div class="rd-navbar-nav-wrap toggle-original-elements">
               <ul class="rd-navbar-nav">
-                <li class="rd-nav-item"><a routerLink="" class="rd-nav-link">Principal</a>
+                <li class="rd-nav-item"><a routerLink="" routerLinkActive='activeRoute' [routerLinkActiveOptions]="{exact:
+                  true}" class="rd-nav-link">Principal</a>
                 </li>
-                <li class="rd-nav-item"><a routerLink="" class="rd-nav-link">Equipo de desarrollo</a>
+                <li class="rd-nav-item"><a routerLink="" (click)="scrollToElement()" class="rd-nav-link">Equipo de desarrollo</a>
                 </li>
-                <li class="rd-nav-item"><a routerLink="noticias" class="rd-nav-link">Noticias</a>
+                <li class="rd-nav-item"><a routerLink="noticias"  routerLinkActive='activeRoute' class="rd-nav-link">Noticias</a>
                 </li>
-                <li class="rd-nav-item"><a routerLink="contacts" class="rd-nav-link">Contactanos</a>
+                <li class="rd-nav-item"><a routerLink="contacts"  routerLinkActive='activeRoute' class="rd-nav-link">Contactanos</a>
                 </li>
-                <li class="rd-nav-item" *ngIf="!isUserLoggedIn" ><a routerLink="inicioSesion" class="rd-nav-link">Iniciar sesión</a>
+                <li class="rd-nav-item" *ngIf="!isUserLoggedIn" ><a routerLink="inicioSesion"   routerLinkActive='activeRoute'class="rd-nav-link">Iniciar sesión</a>
                 </li>
-                <li class="rd-nav-item" *ngIf="!isUserLoggedIn" ><a routerLink="registrar" class="rd-nav-link">Regístrate</a>
+                <li class="rd-nav-item" *ngIf="!isUserLoggedIn" ><a routerLink="registrar"  routerLinkActive='activeRoute' class="rd-nav-link">Regístrate</a>
                 </li>
-                <li class="rd-nav-item" *ngIf="isUserLoggedIn" ><a routerLink="main" class="rd-nav-link">Home</a>
+                <li class="rd-nav-item" *ngIf="isUserLoggedIn" ><a routerLink="main"  routerLinkActive='activeRoute' class="rd-nav-link">Home</a>
                 </li>
                 <li class="rd-nav-item" *ngIf="isUserLoggedIn" ><a routerLink="inicioSesion" (click)="salir()" class="rd-nav-link">Cerrar Sesión</a>
                 </li>

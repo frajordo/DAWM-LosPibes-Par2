@@ -18,6 +18,10 @@ export class NavbarlpComponent implements OnInit {
     } 
   }
   
+  scrollToElement(){
+    var element = document.getElementById("team");
+    element!.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  }
 
   constructor(private cookieService:CookieService, private router:Router, private dataUserService: DataUserService) {
     this.isUserLoggedIn=false;
