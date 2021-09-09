@@ -49,8 +49,10 @@ export class InicioSesionlpComponent implements OnInit {
               this.cookieService.set("username",this.usernameCheck)
               this.dataUserService.isUserLoggedIn.next(true);
               if (x==="/users"){
+                this.cookieService.set("tipo", "0")
                 this.router.navigateByUrl("/main")
               } else {
+                this.cookieService.set("tipo", "1")
                 this.router.navigateByUrl("/mainAdmin")
               }
               

@@ -13,6 +13,7 @@ export class NavbarlpComponent implements OnInit {
   salir(){
     if (this.cookieService.get("username")!=""){
       this.cookieService.set("username","");
+      this.cookieService.set("tipo","")
       this.dataUserService.isUserLoggedIn.next(false);
       this.router.navigateByUrl("/inicioSesion")
     } 

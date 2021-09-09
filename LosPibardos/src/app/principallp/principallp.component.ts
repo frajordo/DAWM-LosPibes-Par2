@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {DataUserService} from "../data-user.service";
 import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-principallp',
@@ -70,8 +71,11 @@ export class PrincipallpComponent implements OnInit {
 
   }
 
-  constructor(private dataUserService: DataUserService, private cookieService: CookieService, private http: HttpClient) { 
+  constructor(private dataUserService: DataUserService, private cookieService: CookieService, private http: HttpClient, private router: Router) { 
     this.dataUser=this.cookieService.get("username")
+    if (this.dataUser==="" || this.cookieService.get("tipo")!="0"){
+      router.navigateByUrl("/")
+    }
     this.inventoryScript();
   }
 

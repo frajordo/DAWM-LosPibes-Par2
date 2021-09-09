@@ -1,4 +1,7 @@
 import { Component, OnInit, ViewChild, AfterViewInit,ElementRef} from '@angular/core';
+import {DataUserService} from "../data-user.service";
+import { CookieService } from 'ngx-cookie-service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-principal-adminlp',
@@ -10,7 +13,12 @@ import { Component, OnInit, ViewChild, AfterViewInit,ElementRef} from '@angular/
 
 export class PrincipalAdminlpComponent implements OnInit {
 
-  constructor(private elementRef:ElementRef) {}
+  constructor(private elementRef:ElementRef, private dataUserService: DataUserService, private cookieService: CookieService, private router: Router) {
+    this.dataUserService.username=this.cookieService.get("username")
+    if (this.dataUserService.username==="" || this.cookieService.get("tipo")!="1"){
+      router.navigateByUrl("/")
+    }
+  }
 
   verGraphEdad() : void{
     this.changeDisplay('barGraph')
