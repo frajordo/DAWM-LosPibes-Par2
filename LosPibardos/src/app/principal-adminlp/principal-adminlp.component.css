@@ -21,8 +21,7 @@ app-scatter{
 	overflow:scroll;
     height: 79vh;
     width: 85vw;
-	display: flex;
-	justify-content: center;
+	display: inline-block;
 }
 #tableContainer table {
 	width: 85vw;
