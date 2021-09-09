@@ -34,6 +34,7 @@ export class NewproductComponent implements OnInit {
         error=>console.log("oops",error)
       );
       this.hideNewProductForm()
+      window.location.reload()
 
       
     }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DataUserService} from "../data-user.service";
+import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 
 @Component({
@@ -34,7 +35,7 @@ export class PrincipallpComponent implements OnInit {
                 </div>
                 <div class="col-md-6 col-6 lefty">
                   <div class="card-body lefty">
-                    <div class="buttonContainer"> <button class="cancelButton" onclick="deleteProduct(  '${articulo._id}'  )" ></button>   </div>
+                    <div class="buttonContainer"> <button class="cancelButton" onClick="deleteProduct('${articulo._id}')" ></button>   </div>
                     <h6 class="text-white element-title">${articulo.nombre}x${articulo.cantidad}</h6>
                     <p class="card-text">${articulo.categoria}</p>
                     <p class="card-text">$${articulo.precio}</p>
@@ -50,6 +51,16 @@ export class PrincipallpComponent implements OnInit {
     
   }
 
+  deleteProduct(id){
+    console.log(id)
+    /*
+    this.http.delete("http://localhost:3005/productos/delete/"+id)
+    .subscribe(
+      data => console.log('success', data),
+      error=>console.log("oops",error)
+    );*/
+  }
+
   showNewProductForm(){
     var formContainer = document.getElementsByTagName("newproduct")[0];
     formContainer.setAttribute("id","showFrom");
@@ -59,7 +70,7 @@ export class PrincipallpComponent implements OnInit {
 
   }
 
-  constructor(private dataUserService: DataUserService, private cookieService: CookieService) { 
+  constructor(private dataUserService: DataUserService, private cookieService: CookieService, private http: HttpClient) { 
     this.dataUser=this.cookieService.get("username")
     this.inventoryScript();
   }

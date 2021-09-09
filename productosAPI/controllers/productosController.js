@@ -120,7 +120,7 @@ module.exports = {
     remove: function (req, res) {
         var id = req.params.id;
 
-        ProductosModel.findByIdAndRemove(id, function (err, productos) {
+        ProductosModel.findByIdAndDelete({_id:id}, function (err, productos) {
             if (err) {
                 return res.status(500).json({
                     message: 'Error when deleting the productos.',

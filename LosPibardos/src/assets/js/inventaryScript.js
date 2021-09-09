@@ -84,5 +84,11 @@ setSearchEvent()
 
 var deleteProduct = (idProducto ) =>{
   console.log("tratando de eliminar : " + idProducto);
+  fetch("http://localhost:3005/productos/delete/"+idProducto, {
+    method: 'DELETE',
+  })
+  .then(res => res.text()) // or res.json()
+  .then(res => console.log(res))
+  window.location.reload()
  
 }
