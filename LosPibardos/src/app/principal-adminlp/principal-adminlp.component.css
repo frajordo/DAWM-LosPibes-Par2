@@ -16,3 +16,14 @@ app-scatter{
 #botonesGraficas button{
 	cursor: pointer;
 }
+
+#tableContainer {
+	overflow:scroll;
+    height: 79vh;
+    width: 85vw;
+	display: flex;
+	justify-content: center;
+}
+#tableContainer table {
+	width: 85vw;
+}

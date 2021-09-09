@@ -23,6 +23,21 @@ export class NavbarlpComponent implements OnInit {
     element!.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   }
 
+  showMap(){
+    console.log("Mostarndo el mapa");
+
+    var Container = document.getElementById("mapContainer");
+    Container!.setAttribute("style","display:");
+  }
+
+  hidePanel(){
+    
+    var Container = document.getElementById("mapContainer");
+    Container!.setAttribute("style","display:none");
+
+  }
+
+
   constructor(private cookieService:CookieService, private router:Router, private dataUserService: DataUserService) {
     this.isUserLoggedIn=false;
     this.dataUserService.isUserLoggedIn.subscribe( value => {

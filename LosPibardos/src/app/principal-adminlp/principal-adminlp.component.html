@@ -67,20 +67,22 @@
           <option value="O">Otro</option>
         </select>
 
-        <table class="table">
-          <thead class="thead-light">
-            <tr>
-              <th scope="col">Usuario</th>
-              <th scope="col">Edad</th>
-              <th scope="col">Email</th>
-              <th scope="col">Genero</th>
-              <th scope="col">Tipo</th>
-            </tr>
-          </thead>
-          <tbody id="usersByWhyContentTable" #usersByWhyContentTable> 
-            <!-- la informacion sera carga al iniciar la pagina  -->
-          </tbody>
-        </table>
+        <div id="tableContainer">
+          <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Usuario</th>
+                <th scope="col">Edad</th>
+                <th scope="col">Email</th>
+                <th scope="col">Genero</th>
+                <th scope="col">Tipo</th>
+              </tr>
+            </thead>
+            <tbody id="usersByWhyContentTable" #usersByWhyContentTable> 
+              <!-- la informacion sera carga al iniciar la pagina  -->
+            </tbody>
+          </table>
+        </div>
       </div> 
 
       
