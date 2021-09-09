@@ -1,4 +1,14 @@
 <div class="rd-navbar-wrap" style="height: 151.406px;">
+
+    
+    <div id="mapContainer" style="display:none">
+        
+      <div id="grayBackgroud" (click)='hidePanel()'></div>
+
+      <div class="buttonContainer"> <button id="cancelButton" (click)='hidePanel()'></button>   </div>   
+      <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d1358.0129897079212!2d-79.96595045705956!3d-2.148032890959443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x902d7301c75c60c3%3A0xaa61e6489196e255!2sGuayaquil!3m2!1d-2.1476793!2d-79.96540069999999!5e0!3m2!1ses!2sec!4v1631143473664!5m2!1ses!2sec" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> 
+    </div>
+
     <nav class="rd-navbar rd-navbar-classic rd-navbar-original rd-navbar-static" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
       <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1 toggle-original" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
       <div class="rd-navbar-aside-outer rd-navbar-collapse bg-gray-dark toggle-original-elements">
@@ -19,7 +29,7 @@
             <li>
               <div class="unit unit-spacing-xs align-items-center">
                 <div class="unit-left"><span class="icon text-middle fa-map-marker"></span></div>
-                <div class="unit-body"><a href="#">Guayas, Ecuador</a></div>
+                <div class="unit-body" (click)="showMap()" ><p >Guayas, Ecuador</p></div>
               </div>
             </li>
           </ul>

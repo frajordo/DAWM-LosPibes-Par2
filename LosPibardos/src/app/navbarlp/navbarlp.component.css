@@ -169,5 +169,80 @@ transition: color .3s;
 
 }
 
+.unit-body:hover{
+  cursor: pointer;
+}
+
+#mapContainer{
+  width: 60vw;
+  height: 75vh;
+  background-color: #a56f6f62;
+  position: fixed;
+  z-index: 3;
+  left: 20vw;
+  top: 12vh;
+}
+
+#grayBackgroud{
+  background-color: #80808096;
+  width: 200vw;
+  height: 600vh;
+  position: absolute;
+  z-index: -1;
+  left: -20vw;
+  top: -12vh;
+}
+
+iframe{
+  width: 60vw;
+  height: 75vh;
+}
+
+
+
+.buttonContainer{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+button#cancelButton {
+  border-radius: 50%;
+  padding: 0.5em;
+  width: 30px;
+  height: 30px;
+  background: rgb(107, 107, 107);
+  border: 2px solid rgb(163, 162, 162);
+  position: relative;
+}
+button#cancelButton:hover {
+  border: 2px solid rgb(104, 104, 104);
+  background-color: rgba(0, 0, 0, 0.753);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+button#cancelButton::before {
+  content: " ";
+  position: absolute;
+  display: block;
+  background-color: rgb(255, 255, 255);
+  width: 2px;
+  left: 12px;
+  top: 5px;
+  bottom: 5px;
+  transform: rotate(45deg);
+}
+button#cancelButton::after {
+  content: " ";
+  position: absolute;
+  display: block;
+  background-color: rgb(255, 255, 255);
+  height: 2px;
+  top:12px;
+  left: 5px;
+  right: 5px;
+  transform: rotate(45deg);
+}
 
 

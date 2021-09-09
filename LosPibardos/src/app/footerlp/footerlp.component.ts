@@ -9,6 +9,12 @@ export class FooterlpComponent implements OnInit {
 
   constructor() { }
 
+
+  scrollToElement(){
+    var element = document.getElementById("team");
+    element!.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  }
+  
   ngOnInit(): void {
   }
 
