@@ -20,8 +20,8 @@ app-scatter{
 #tableContainer {
 	overflow:scroll;
     height: 79vh;
-    width: 85vw;
-	display: inline-block;
+    width: 100%;
+	display: flex;
 }
 #tableContainer table {
 	width: 85vw;
